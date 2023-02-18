@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Employee Commute Data-Read from .json file atm";
+}
+<h1>@ViewData["Title"]</h1>
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>Employee </th>
+            <th>Transport </th>
+            <th>Distance(km/one way) </th>
+            <th>Workdays per week</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var employee in ViewBag.EmployeeTravelData)
+            {
+                <tr><td>@employee.Name</td><td>@employee.Transport</td><td>@employee.Distance</td><td>@employee.Workdaysperweek</td></tr>
+            }
+        }
+    </tbody>
+
+</table>
+
+@model MonthModel
+<h1>Select a month to generate report</h1>
+
+@using (Html.BeginForm("Download", "Home"))
+{
+    <div class="form-group">
+        @Html.DropDownListFor(m => m.Month, (List<SelectListItem>)ViewBag.Months, "Select a month",  new {  @id = "monthDropdown"})
+    </div>
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Year, new { @readonly = "readonly" })
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" , id="downloadButton" disabled>Download CSV</button>
+    </div>
+}
+
+@section scripts {
+    <script>
+        $(function() {
+            // Set the default year to the current year
+            var currentYear = new Date().getFullYear();
+            $('#Year').val(currentYear);
+
+            // Submit the form when the user selects a month from the dropdown
+            $('#monthDropdown').change(function() {
+                var selectedMonth = $('#monthDropdown').val();
+                if (selectedMonth) {
+                    $('#downloadButton').prop('disabled', false);
+                } else {
+                    $('#downloadButton').prop('disabled', true);
+                }
+            });
+        });
+    </script>
+}
+
+
+

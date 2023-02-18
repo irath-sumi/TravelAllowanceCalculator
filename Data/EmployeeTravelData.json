@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "Hein",
+    "Transport": "Bike",
+    "Distance": 12,
+    "Workdaysperweek": 5
+  },
+  {
+    "Name": "Florian",
+    "Transport": "Bus",
+    "Distance": 15,
+    "Workdaysperweek": 4
+  },
+  {
+    "Name": "Wobbe",
+    "Transport": "Bike",
+    "Distance": 4,
+    "Workdaysperweek": 3
+  },
+  {
+    "Name": "Dolf",
+    "Transport": "Car",
+    "Distance": 20,
+    "Workdaysperweek": 5
+  },
+  {
+    "Name": "Ioannís",
+    "Transport": "Train",
+    "Distance": 100,
+    "Workdaysperweek": 5
+  },
+  {
+    "Name": "Ben",
+    "Transport": "Bike",
+    "Distance": 8,
+    "Workdaysperweek": 4.5
+  },
+  {
+    "Name": "Hans",
+    "Transport": "Car",
+    "Distance": 150,
+    "Workdaysperweek": 2
+  }
+]
